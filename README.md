@@ -1,4 +1,6 @@
 # RNCalendar
+![](./examples/pic.png) ![](./examples/vid.gif)
+---
 ## English | EN
 RNCalendar is a simple and open source calendar component made in React Native, it shows the current month and has two button that allows the user to go back and forward in the calendary
 ### Usage
