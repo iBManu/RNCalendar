@@ -3,8 +3,23 @@ import { View, Text } from 'react-native';
 import Week from "./Week";
 import Top from "./Top";
 
-export default function RNCalendar() {
+export default function RNCalendar({options}) {
     const [date, setDate] = useState(new Date());
+    
+    const defaultOptions = {
+        lang: 'en',
+        oneCharDays: false,
+        theme: "default",
+        outOfMonthDaysTransparency: false,
+        outOfMonthDaysNumbers: false,
+        customDayLabels: false,
+        customDayLabelsNames: {
+            customLongDayNames: [],
+            customShortDayNames: [],
+        }
+    };
+
+    const mergedOptions = {...defaultOptions, ...options};
 
     const handleMonthChange = (newMonth) => {
         setDate(newMonth);
@@ -23,13 +38,13 @@ export default function RNCalendar() {
     dayOffset.set(6, 3);
     return (
         <View style={{ width: "100%" }}>
-            <Top date={date} onMonthChange={handleMonthChange} />
-            <Week key={1} isfirst={isfirst} first={firstday.getDay()} thisMonthDate={date} />
-            <Week key={2} first={dayOffset.get(firstday.getDay()) + 7 * 0} thisMonthDate={date} />
-            <Week key={3} first={dayOffset.get(firstday.getDay()) + 7 * 1} thisMonthDate={date} />
-            <Week key={4} first={dayOffset.get(firstday.getDay()) + 7 * 2} thisMonthDate={date} />
-            <Week key={5} first={dayOffset.get(firstday.getDay()) + 7 * 3} thisMonthDate={date} />
-            <Week key={6} first={dayOffset.get(firstday.getDay()) + 7 * 4} thisMonthDate={date} />
+            <Top date={date} onMonthChange={handleMonthChange} options={mergedOptions}/>
+            <Week options={mergedOptions} isfirst={isfirst} first={firstday.getDay()} thisMonthDate={date} />
+            <Week options={mergedOptions} first={dayOffset.get(firstday.getDay()) + 7 * 0} thisMonthDate={date} />
+            <Week options={mergedOptions} first={dayOffset.get(firstday.getDay()) + 7 * 1} thisMonthDate={date} />
+            <Week options={mergedOptions} first={dayOffset.get(firstday.getDay()) + 7 * 2} thisMonthDate={date} />
+            <Week options={mergedOptions} first={dayOffset.get(firstday.getDay()) + 7 * 3} thisMonthDate={date} />
+            <Week options={mergedOptions} first={dayOffset.get(firstday.getDay()) + 7 * 4} thisMonthDate={date} />
         </View>
     );
 }

@@ -1,12 +1,25 @@
 import React from "react";
 import { View, Text, StyleSheet } from 'react-native';
 
-export default function Week({ first, isfirst, thisMonthDate }) {
+export default function Week({ first, isfirst, thisMonthDate , options}) {
+
+    const {theme, outOfMonthDaysTransparency, outOfMonthDaysNumbers} = options;
+
     const currentDate = new Date();
     if(first === 0) {
         first = 7;
     }
     const renderDays = () => {
+        const dayWithoutNumberStyle = {
+            width: "13%",
+            aspectRatio: 1,
+            backgroundColor: outOfMonthDaysTransparency ? "transparent" : "#F9F9F9",
+            borderRadius: 12,
+            margin: "0.5%",
+            justifyContent: "center",
+            alignItems: "center",
+        };
+        
         if (isfirst) {
             const days = [];
             var dayNumber = 1;
@@ -37,7 +50,7 @@ export default function Week({ first, isfirst, thisMonthDate }) {
                 }
                 else {
                     days.push(
-                        <View key={index} style={styles.dayWithoutNumber}></View>
+                        <View key={index} style={dayWithoutNumberStyle}></View>
                     );
                 }
 
@@ -75,7 +88,7 @@ export default function Week({ first, isfirst, thisMonthDate }) {
                 }
                 else {
                     days.push(
-                        <View key={index} style={styles.dayWithoutNumber}></View>
+                        <View key={index} style={dayWithoutNumberStyle}></View>
                     );
                 }
             }
@@ -103,20 +116,6 @@ const styles = StyleSheet.create({
         borderColor: "lightgray",
         borderWidth: 1,
     },
-    dayNumber: {
-        fontSize: 32,
-        fontWeight: "bold",
-        color: "lightgray",
-    },
-    dayWithoutNumber: {
-        width: "13%",
-        aspectRatio: 1,
-        backgroundColor: "#F9F9F9",
-        borderRadius: 12,
-        margin: "0.5%",
-        justifyContent: "center",
-        alignItems: "center",
-    },
     currentDay: {
         width: "13%",
         aspectRatio: 1,
@@ -132,5 +131,10 @@ const styles = StyleSheet.create({
         fontSize: 32,
         fontWeight: "bold",
         color: "#A78295",
+    },
+    dayNumber: {
+        fontSize: 32,
+        fontWeight: "bold",
+        color: "lightgray",
     }
 });
