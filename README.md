@@ -2,7 +2,7 @@
 ![vid](https://github.com/iBManu/RNCalendar/assets/70716864/1d9f5696-7252-45e4-9563-aaa588e4e737)
 ---
 ## English | EN
-**RNCalendar** is a simple and open source calendar component made in *React Native*, it shows the current month and has two button that allows the user to go back and forward in the calendary.
+**RNCalendar** is a simple and open source calendar component made in *React Native*, it shows the current month and has two buttons that allows the user to go back and forward in the calendary.
 ### Usage
 First you have to download the files and put them together inside a folder in your project.
 Then you have to import only the **RNCalendar** component.
