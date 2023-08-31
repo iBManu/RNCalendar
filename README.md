@@ -77,7 +77,7 @@ export default function App() {
 ```
 Ahora el calendario debería estar funcionando correctamente.
 
-### Properties
+### Propiedades
 Puedes personalizar el componente **RNCalendar** con las siguientes propiedades:
 * `lang`: Permite cambiar el idioma de los dias y meses, los posibles valores son `en`,`es`,`fr`,`pr` y `de`. El valor por defecto es `en`.
   
