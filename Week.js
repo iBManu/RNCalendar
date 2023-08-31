@@ -3,11 +3,10 @@ import { View, Text, StyleSheet } from 'react-native';
 
 export default function Week({ first, isfirst, thisMonthDate }) {
     const currentDate = new Date();
-    if(first === 0) { //This is to parse the days, making sundays the last day of the week instead of the first
+    if(first === 0) {
         first = 7;
     }
     const renderDays = () => {
-        console.log("Fist day: " + first)
         if (isfirst) {
             const days = [];
             var dayNumber = 1;
@@ -45,12 +44,11 @@ export default function Week({ first, isfirst, thisMonthDate }) {
             }
             return days;
         }
-        else { //For the rest of the weeks
+        else {
             const actualDate = new Date();
             const lastDay = new Date(thisMonthDate.getFullYear(), thisMonthDate.getMonth() + 1, 0)
             const days = [];
             var dayNumber = first;
-            console.log("Last day: " + lastDay);
             for (let index = 0; index < 7; index++) {
 
                 if (dayNumber <= lastDay.getDate()) {
