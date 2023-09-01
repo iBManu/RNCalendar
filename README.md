@@ -87,7 +87,7 @@ Puedes personalizar el componente **RNCalendar** con las siguientes propiedades:
   
 * `customDayLabels`: Te permite establecer nombres personalizados para los días, debe ser acompañado por la siguente propiedad. `true` o `false`. El valor por defecto es `false`.
   
-* `customDayLabelsNames: { customLongDayNames: [], customShortDayNames: [] }`: Aquí añades los nombres personalizados para los días de la semana, solo se moestraran si la propiedad `customDayLabels` se establece en `true`. `oneCharDays` afecta a cual de los nombres personalizados se muestra. Ningún nombre personalizado está establecido por defecto.
+* `customDayLabelsNames: { customLongDayNames: [], customShortDayNames: [] }`: Aquí añades los nombres personalizados para los días de la semana, solo se mostrarán si la propiedad `customDayLabels` se establece en `true`. `oneCharDays` afecta a cuales de los nombres personalizados se muestran. Ningún nombre personalizado está establecido por defecto.
 
 ### Ejemplo de uso
 ```javascript
