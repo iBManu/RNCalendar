@@ -24,7 +24,7 @@ Now the calendar should be working right.
 
 ### Properties
 You can customize the **RNCalendar** component whith the following properties:
-* `lang`: Allows you to change the language of the month a days, the accepted values are `en`,`es`,`fr`,`pr` and `de` for english, spanish, french, portuguese and german respectively. The default value is `en`.
+* `lang`: Allows you to change the language of the month and days, the accepted values are `en`,`es`,`fr`,`pr` and `de` for english, spanish, french, portuguese and german respectively. The default value is `en`.
   
 * `oneCharDays`: Allows you to swap bettween long or short day names, for example MON and M for Monday. `true` or `false`. The default value is `false`.
   
